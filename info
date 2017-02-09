@@ -1,0 +1,24 @@
+mysql://b83946cb15195a:e1473e89@us-cdbr-iron-east-04.cleardb.net/heroku_0c63ce6730cdd8f?reconnect=true
+
+DB_HOST = us-cdbr-iron-east-04.cleardb.net
+
+DB_DATABASE = heroku_0c63ce6730cdd8f
+
+DB_USERNAME = b83946cb15195a
+
+DB_PASSWORD = e1473e89
+
+
+
+
+'mysql'  => [
+    'driver'    => 'mysql',
+    'host'      => env('DB_HOST', ''),
+    'database'  => env('DB_DATABASE', ''),
+    'username'  => env('DB_USERNAME', ''),
+    'password'  => env('DB_PASSWORD', ''),
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+    'strict'    => false,
+],
