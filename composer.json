@@ -1,0 +1,15 @@
+{
+    "name": "adriansb3105/AsociacionIntegralAdrianSerranoSemestreIIIAnno2016",
+    "description": "Test",
+    "version": "0.0.1",
+    "homepage": "https://guadalupe-community.herokuapp.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrian Serrano",
+            "email": "adriansb3105@gmail.com",
+            "homepage": "https://guadalupe-community.herokuapp.com/",
+            "role": "Developer"
+        }
+    ]
+}
