@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<h1>Hello <?php echo 'World'; ?></h1>
+<?php
 
-<?php 
+include_once 'controller/DefaultController.php';
 
+$controller = new DefaultController();
+$controller->invoke();
+
+
+
+/*
 $host = "us-cdbr-iron-east-04.cleardb.net";
 $username = "b83946cb15195a";
 $password = "e1473e89";
@@ -20,7 +20,7 @@ try {
     echo "Connected successfully";
     echo "<br>";
 
-/*********************************************************
+*********************************************************
     $id = 7;
     $name = "Mani";
 
@@ -33,12 +33,12 @@ try {
 
     echo 'Insertado';
     echo '<br>';
-*********************************************************/
+********************************************************
 
 
 	$query = $conn->prepare("SELECT id, name FROM tb_test");
     $query->execute();
-    
+
 foreach ($query as $valor){
 	echo 'Id: '.$valor[0];
 	echo ' Name: '.$valor[1];
@@ -52,9 +52,4 @@ $conn = null;
     }catch(PDOException $e){
     	echo "Connection failed: " . $e->getMessage();
     }
-
- ?>
-
-
-</body>
-</html>
+*/
