@@ -1,0 +1,80 @@
+Activity = {
+  id varchar(5)PRIMARY KEY,
+	date_day Date,
+	start_time Time,
+	end_time Time,
+	hours Time,
+	kind varchar(8),
+	description varchar(500),
+	total float
+}
+
+Services = {
+  id varchar(5) PRIMARY KEY,
+	kitchen boolean,
+  chairs_num int,
+	tables_num int,
+	tablecloths_num int
+}
+
+Partner = {
+  id varchar(10) PRIMARY KEY,
+  firs_name varchar(20),
+  last_name varchar(20),
+  phone varchar(20),
+  address varchar(100),
+  email varchar(50),
+  pass varchar(50)
+}
+
+Directorate = {
+  id varchar(10) PRIMARY KEY,
+  election_date Date,
+  position varchar(15), /*Presidente, Vice Presidente, Fiscal*/
+  state boolean, /*active, inactive*/
+	Foreign Key(id) references Partner(id) ON DELETE CASCADE
+}
+
+Employee = {
+  id varchar(10) PRIMARY KEY,
+  first_name varchar(20),
+  last_name varchar(20),
+  email varchar(50),
+  salary float,
+  pass varchar(50),
+  position varchar(15)
+}
+
+Employee_Payment = {
+  id varchar(10),
+  payment_date Date,
+  amount float,
+  PRIMARY KEY(id, payment_date),
+  Foreign Key(id) references Employee(id) ON DELETE CASCADE)
+}
+
+Concept = {
+  id int primary key,
+  concept varchar(40) /*Alquiler del Salon Comunal, Alquiler del Local Comercial,
+                    Pago de empleados, Compra de articulos, Reparacion, Otra entrada, Otra Salida*/
+}
+
+Petty_Cash = {
+  id int AUTO_INCREMENT primary key,
+	date_day Date,
+  id_concept int,
+  id_activity varchar(5),
+  income float,
+	outcome float,
+  total float,
+  Foreign Key(id_concept) references tb_concept(id) ON DELETE CASCADE,
+	Foreign Key(id_activity) references tb_activity(id) ON DELETE CASCADE
+}
+
+Reunion = {
+  reunion_date Date,
+	doc_url varchar(100),
+	doc_name varchar(50),
+	description varchar(100),
+	PRIMARY KEY(reunion_date, doc_url)
+}

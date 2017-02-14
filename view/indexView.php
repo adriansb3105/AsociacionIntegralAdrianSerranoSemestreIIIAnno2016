@@ -1,63 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="view/css/style.css">
-  <link rel="stylesheet" href="view/css/clndr.css">
-  <title>Asociacion Integral</title>
-</head>
-<body>
-    <header>
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img alt="logo" src="view/img/worldwide.png"></a>
-          </div>
+<?php include_once 'header.php'; ?>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="index.php">Principal <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Actividades</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+<div class="jumbotron row">
+  <h1>Asociaci&oacute;n Integral de Guadalupe</h1>
+  <div class="top-space col-lg-9">
+    <p>Nos complace darle la bienvenida al sitio de la Asociaci&oacute;n Integral de Guadalupe.</p>
+    <p>La Asociaci&oacute;n ayuda al mejoramiento del cant&oacute;n brindando servicios para todas las personas de la comunidad.</p>
+    <p>De esta forma crece Guadalupe y se crea un mejor futuro para todos.</p>
+  </div>
+  <div class="top-space col-lg-3">
+    <img class="img-rounded img-responsive" src="view/img/asociation.png" alt="asociacion">
+  </div>
+</div>
 
-    <div id="mini-clndr"></div>
-      <script id="calendar-template" type="text/template">
-        <div class="controls">
-          <div class="clndr-previous-button">&lsaquo;</div><div class="month"><%= month %></div><div class="clndr-next-button">&rsaquo;</div>
-        </div>
-
-        <div class="days-container">
-          <div class="days">
-            <div class="headers">
-              <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-            </div>
-            <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
-          </div>
-        </div>
-      </script>
-
-    <footer>
-
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="view/js/moment.js"></script>
-    <script src="view/js/underscore.js"></script>
-    <script src="view/js/clndr.js"></script>
-    <script src="view/js/main.js"></script>
-</body>
-</html>
+<?php include_once 'footer.php'; ?>
