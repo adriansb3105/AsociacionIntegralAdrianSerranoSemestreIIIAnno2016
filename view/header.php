@@ -31,6 +31,19 @@
               <li><a href="index.php">Principal <span class="sr-only">(current)</span></a></li>
               <li><a href="?calendar">Actividades</a></li>
             </ul>
+            
+            <form action="?login=log" class="navbar-form navbar-right" method="POST">
+              <div class="form-group">
+                <label class="sr-only" for="emailLogin">Ingrese su correo</label>
+                <input type="email" class="form-control" id="emailLogin" placeholder="Ingrese su correo">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="passwordLogin">Ingrese su contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="passwordLogin" placeholder="Ingrese su contrase&ntilde;a">
+              </div>
+              
+              <button type="submit" class="btn btn-success">Ingresar</button>
+            </form>
           </div>
         </div>
       </nav>
