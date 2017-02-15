@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'core/ConnectionDB.php';
 
 class LoginModel{
@@ -9,7 +9,9 @@ class LoginModel{
     $this->conn = $connection->connect();
   }
 
-  public function verifyLogin(){
-
+  public function findEmployee($email, $password){
+      $query = mysqli_query($this -> conn, "call sp_find_employee('$email', '$password')");
+      $data = mysqli_fetch_all($query);
+      return $data;
   }
 }

@@ -182,6 +182,17 @@ BEGIN
 	SELECT id, date_day, start_time, end_time, hours, description FROM tb_activity WHERE kind = 'publica';
 END **
 
+DELIMITER **
+	CREATE PROCEDURE sp_find_employee(email_ varchar(50), pass_ varchar(50))
+BEGIN
+	SELECT id, first_name, last_name, position from tb_employee WHERE email_ = email and pass_ = pass;
+END **
+
+DELIMITER **
+	CREATE PROCEDURE sp_find_partner(email_ varchar(50), pass_ varchar(50))
+BEGIN
+	SELECT id, first_name, last_name, phone, address from tb_employee WHERE email_ = email and pass_ = pass;
+END **
 
 /****************************************** TESTS ******************************************/
 CALL sp_reunion_insert('2015-04-30', 'http://dropbox.com/ygakdygrdyvjgktujv6326ugr6erg', 'dweweo', 'se hsdd papaya hoy');
