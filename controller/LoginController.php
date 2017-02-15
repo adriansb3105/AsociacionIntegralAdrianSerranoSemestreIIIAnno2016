@@ -18,17 +18,26 @@ session_start();
           $email = $_POST['emailLogin'];
           $password = $_POST['passwordLogin'];
 
+          //id, first_name, last_name, position
           $employee = $this->model->findEmployee($email, $password);
 
           if(count($employee) !== 0){
+            $position = '';
 
-            //foreach ($employee as $val) {
+            foreach ($employee as $val) {
+              $position = $val[3];
             //  echo 'Codigo: '.$val[0].', Nombre: '.$val[1].', Precio: '.$val[2].', Descripcion: '.$val[3];
             //  echo '<br/>';
-            //}
+            }
 
             if(!isset($_SESSION['logged'])){
               $_SESSION['logged'] = 'logged';
+            }
+
+            if($position === 'Secretaria'){
+              if(!isset($_SESSION['Secretaria'])){
+                $_SESSION['Secretaria'] = 'Secretaria';
+              }
             }
 
             include 'view/dashboardView.php';

@@ -16,4 +16,10 @@ class CalendarModel{
     return $data;
   }
 
+  public function get_internal_activity_all(){
+    $query_ = mysqli_query($this -> conn, "call sp_internal_activity_select_all()");
+    $data_ = mysqli_fetch_all($query_);
+
+    return $data_;
+  }
 }

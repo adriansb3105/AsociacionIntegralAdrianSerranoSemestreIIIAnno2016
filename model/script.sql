@@ -183,6 +183,13 @@ BEGIN
 END **
 
 DELIMITER **
+	CREATE PROCEDURE sp_internal_activity_select_all()
+BEGIN
+	SELECT id, date_day, start_time, end_time, hours, description FROM tb_activity WHERE kind = 'interna';
+END **
+
+
+DELIMITER **
 	CREATE PROCEDURE sp_find_employee(email_ varchar(50), pass_ varchar(50))
 BEGIN
 	SELECT id, first_name, last_name, position from tb_employee WHERE email_ = email and pass_ = pass;
@@ -205,8 +212,8 @@ CALL sp_public_activity_insert('5sdf1', '2017-02-17', '10:00:00', '12:00:00', 'd
 CALL sp_petty_cash_income('2017-02-13', 6, 'hf53r', 2000);
 CALL sp_petty_cash_outcome('2017-02-13', 7, '', 4000);
 
-CALL sp_public_activity_select_all();
-
+CALL sp_internal_activity_select_all();
+call sp_internal_activity_select_all();
 /****************************** OBLIGATORIES SCRIPTS**********************************/
 CALL sp_concept(1, 'Alquiler del Salon Comunal');
 CALL sp_concept(2, 'Alquiler del Local Comercial');
@@ -220,6 +227,8 @@ CALL sp_petty_cash('2017-02-12', 6, '', 0, 0, 10000000);
 
 
 SELECT * FROM tb_activity;
+
+update tb_activity set kind = 'interna' where id='a1b2c'
 
 delete from tb_activity where id!='1';
 
