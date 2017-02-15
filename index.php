@@ -4,6 +4,7 @@ include_once 'controller/DefaultController.php';
 include_once 'controller/CalendarController.php';
 include_once 'controller/LoginController.php';
 include_once 'controller/LogoutController.php';
+include_once 'controller/ReunionController.php';
 
 
 if(isset($_GET['calendar'])){
@@ -14,6 +15,9 @@ if(isset($_GET['calendar'])){
   $controller->invoke();
 }elseif(isset($_GET['logout'])){
   $controller = new LogoutController();
+  $controller->invoke();
+}elseif(isset($_GET['reunion'])){
+  $controller = new ReunionController();
   $controller->invoke();
 }else{
   $controller = new DefaultController();

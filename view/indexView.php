@@ -12,4 +12,8 @@
   </div>
 </div>
 
+<div>
+	<a href="?reunion">Crear acta de reuni&oacute;n</a>
+</div>
+
 <?php include_once 'footer.php'; ?>
