@@ -211,6 +211,8 @@ CALL sp_internal_activity_insert('hf53r', '2017-02-14', '08:25:32', '09:25:00', 
 CALL sp_public_activity_insert('5sdf1', '2017-02-17', '10:00:00', '12:00:00', 'descript', true, 200, 50, 45, 5608)
 CALL sp_petty_cash_income('2017-02-13', 6, 'hf53r', 2000);
 CALL sp_petty_cash_outcome('2017-02-13', 7, '', 4000);
+call sp_find_employee('martita@hotmail.com', '123v23gjy23yjg23');
+
 
 CALL sp_internal_activity_select_all();
 call sp_internal_activity_select_all();
@@ -223,6 +225,8 @@ CALL sp_concept(5, 'Reparacion');
 CALL sp_concept(6, 'Otra entrada');
 CALL sp_concept(7, 'Otra Salida');
 CALL sp_petty_cash('2017-02-12', 6, '', 0, 0, 10000000);
+
+CALL sp_employee_insert('0122223333', 'Marta', 'Sanchez', 'martita@hotmail.com', 250000, '123v23gjy23yjg23', 'Secretaria');
 /************************************************************************************/
 
 

@@ -1,5 +1,9 @@
 <?php include_once 'header.php'; ?>
 
+<div>
+	<a href="?reunion">Crear acta de reuni&oacute;n</a>
+</div>
+
 <div class="jumbotron row">
   <h1>Main Dashboard</h1>
   <div class="top-space col-lg-9">

@@ -22,3 +22,7 @@ body{
 .blue{
   background: blue;
 }
+
+.no-resize{
+  resize: none;
+}

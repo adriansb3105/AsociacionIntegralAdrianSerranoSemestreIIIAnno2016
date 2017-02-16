@@ -9,10 +9,10 @@ include_once 'model/ReunionModel.php';
     }
 
     public function invoke(){
-    	if(isset($_GET['reunion'])){
-    		include 'view/reunionView.php';
-      	}else{
-        	include 'view/indexView.php';
-      	}
+    	if(isset($_GET['reunion']) && isset($_SESSION['Secretaria']) &&  isset($_SESSION['logged'])){
+    	   include 'view/reunionView.php';
+      }else{
+        include 'view/indexView.php';
+      }
 	}
 }
