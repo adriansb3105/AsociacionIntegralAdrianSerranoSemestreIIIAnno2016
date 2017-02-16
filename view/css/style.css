@@ -26,3 +26,30 @@ body{
 .no-resize{
   resize: none;
 }
+
+.link{
+  text-decoration: none;
+  color: #2196f3;
+  font-size: 1.6em;
+}
+
+.link:hover{
+  text-decoration: none;
+  background: #90caf9;
+}
+div.links ul{
+  text-align: left;
+}
+
+div.links ul li{
+  list-style: circle;
+  margin-bottom: 2em;
+}
+
+.links{
+  margin-top: 1.5em;
+}
+
+.center{
+  text-align: center;
+}

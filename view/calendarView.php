@@ -1,7 +1,5 @@
 <?php include_once 'header.php'; ?>
 
-  <h1 id="resultado"></h1>
-
 <script>
   var events = [<?php
       if (isset($events_array)) {

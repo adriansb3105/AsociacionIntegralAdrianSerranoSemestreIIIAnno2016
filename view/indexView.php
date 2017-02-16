@@ -1,4 +1,12 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+
+  if(isset($errorLogin)){
+    echo '<div class="alert alert-danger alert-dismissable fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+              <strong>Error!</strong> Usuario o contrase&ntilde;a incorrectos
+          </div>';
+  }
+?>
 
 <div class="jumbotron row">
   <h1>Asociaci&oacute;n Integral de Guadalupe</h1>

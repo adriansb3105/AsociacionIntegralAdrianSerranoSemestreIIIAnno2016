@@ -42,6 +42,7 @@ session_start();
 
             include 'view/dashboardView.php';
           }else{
+            $errorLogin = 'error';
             include 'view/indexView.php';
           }
         }else{

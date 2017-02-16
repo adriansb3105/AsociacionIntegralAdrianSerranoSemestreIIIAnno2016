@@ -12,13 +12,6 @@ include_once 'model/CalendarModel.php';
       if(isset($_GET['calendar'])){
         $JSON = '';
 
-        $publicActivities = $this->model->get_public_activity_all();
-        //id, date_day, start_time, end_time, hours, description
-        foreach ($publicActivities as $com => $val){
-          $arr = array('date'=>$val[1], 'title'=>$val[2], 'location'=>'vgn', 'person'=>'fgc', 'description'=>$val[5]);
-          $JSON .= json_encode($arr).',';
-        }
-
         if(isset($_SESSION['Secretaria'])){
           $internalActivities = $this->model->get_internal_activity_all();
           foreach ($internalActivities as $com_ => $val_){
@@ -26,6 +19,14 @@ include_once 'model/CalendarModel.php';
             $JSON .= json_encode($arr_).',';
           }
         }
+        /*
+        $publicActivities = $this->model->get_public_activity_all();
+        //id, date_day, start_time, end_time, hours, description
+        foreach ($publicActivities as $com => $val){
+          $arr = array('date'=>$val[1], 'title'=>$val[2], 'location'=>'vgn', 'person'=>'fgc', 'description'=>$val[5]);
+          $JSON .= json_encode($arr).',';
+        }
+        */
 
         $events_array = $JSON;
 

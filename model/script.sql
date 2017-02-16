@@ -207,15 +207,13 @@ CALL sp_employee_insert('0115710825', 'Adrian', 'Serrano', 'add@uakjsd.cc', 2500
 CALL sp_employee_payment_insert('0115710825', '2016-02-04', 250000);
 CALL sp_partner_insert('2225556663', 'Juan', 'Jonas', '8265131535118', 'por ahi', 'asudknds@sda.as', 'asdsc');
 CALL sp_directorate_insert('2225556663', '2000-05-25', 'Fiscal', true);
-CALL sp_internal_activity_insert('hf53r', '2017-02-14', '08:25:32', '09:25:00', 'buena onda');
+CALL sp_internal_activity_insert('sdf44', '2017-02-27', '08:43:32', '09:25:00', '2222');
 CALL sp_public_activity_insert('5sdf1', '2017-02-17', '10:00:00', '12:00:00', 'descript', true, 200, 50, 45, 5608)
 CALL sp_petty_cash_income('2017-02-13', 6, 'hf53r', 2000);
 CALL sp_petty_cash_outcome('2017-02-13', 7, '', 4000);
 call sp_find_employee('martita@hotmail.com', '123v23gjy23yjg23');
 
-
-CALL sp_internal_activity_select_all();
-call sp_internal_activity_select_all();
+call sp_internal_activity_select_all()
 /****************************** OBLIGATORIES SCRIPTS**********************************/
 CALL sp_concept(1, 'Alquiler del Salon Comunal');
 CALL sp_concept(2, 'Alquiler del Local Comercial');
