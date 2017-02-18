@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="view/css/style.css">
   <link rel="stylesheet" href="view/css/clndr.css">
   <link href = "https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css" rel = "stylesheet">
+  <link rel="stylesheet" type="text/css" href="view/css/sweetalert.css">
   <title>Asociacion Integral</title>
 </head>
 <body>

@@ -58,3 +58,7 @@ div.links ul li{
 .checkbox-kitchen{
   margin-bottom: 2em;
 }
+
+#totalMoney{
+  width: 8em; 
+}

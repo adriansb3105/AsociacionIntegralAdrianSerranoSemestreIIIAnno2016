@@ -3,7 +3,7 @@ $(function() {
 		altFormat: "yy-mm-dd"
 	});
 
-	$("#public-only").hide();
+	$("#public-only").show();
 
 	$("#kind").on('change', function(){
 		if($("#kind").val() !== 'interna'){
@@ -50,7 +50,5 @@ function calculateTotal(kitchen, chairs, tables, tablecloths){
 		total += 8500;
 	}
 
-	let totalMoney = document.getElementById("total");
-	totalMoney.innerHTML = total;
-
+	document.getElementById("totalMoney").value = total;
 }

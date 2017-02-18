@@ -1,0 +1,1 @@
+validate all variables are set

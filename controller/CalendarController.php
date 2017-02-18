@@ -16,15 +16,18 @@ include_once 'model/CalendarModel.php';
         if(isset($_SESSION['Secretaria'])){
           foreach ($activities as $com_ => $val_){
             if($val_[5] === 'interna'){
-              $arr_ = array('date'=>$val_[1], 'title'=>$val_[2], 'location'=>'vgn', 'person'=>'fgc', 'description'=>$val_[5]);
+              //id, date_day, start_time, end_time, hours, kind, description, total
+              $arr_ = array('id'=>$val_[0], 'date'=>$val_[1], 'start_time'=>$val_[2], 'end_time'=>$val_[3],
+                            'hours'=>$val_[4], 'kind'=>$val_[5], 'description'=>$val_[6], 'total'=>$val_[7]);
               $JSON .= json_encode($arr_).',';
             }
           }
         }
 
-        foreach ($activities as $com => $val){
-          if($val[5] === 'publica'){
-            $arr = array('date'=>$val[1], 'title'=>$val[2], 'location'=>'vgn', 'person'=>'fgc', 'description'=>$val[5]);
+        foreach ($activities as $com => $val_){
+          if($val_[5] === 'publica'){
+            $arr = array('id'=>$val_[0], 'date'=>$val_[1], 'start_time'=>$val_[2], 'end_time'=>$val_[3],
+                          'hours'=>$val_[4], 'kind'=>$val_[5], 'description'=>$val_[6], 'total'=>$val_[7]);
             $JSON .= json_encode($arr).',';
           }
         }

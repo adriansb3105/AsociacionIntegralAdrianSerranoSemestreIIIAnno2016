@@ -16,6 +16,11 @@ if(isset($insertCorrect)){
 
   <form action="?new_event=new" method="POST">
     <div class="form-group">
+      <label for="email">Ingrese su correo electr&oacute;nico</label>
+      <input type="email" name="email" class="form-control" id="email" placeholder="ejemplo@mail.com" required>
+    </div>
+
+		<div class="form-group">
       <label for="datepicker">Seleccione la fecha</label>
       <input type="date" name="datepicker" class="form-control" id="datepicker" placeholder="Seleccione la fecha" required>
     </div>
@@ -35,13 +40,17 @@ if(isset($insertCorrect)){
        <textarea id="description" name="description" class="form-control no-resize" placeholder="Ingrese la descripcion del evento" required></textarea>
     </div>
 
-		<div class="form-group">
-      <label for="kind">Indique el tipo de evento a realizar</label>
-      <select class="form-control" id="kind" name="kind">
-        <option value="interna">Interno</option>
-        <option value="publica">P&uacute;blico</option>
-      </select>
-    </div>
+		<?php
+			if(isset($_SESSION['Secretaria'])){
+				echo '<div class="form-group">
+					      <label for="kind">Indique el tipo de evento a realizar</label>
+					      <select class="form-control" id="kind" name="kind">
+					        <option value="interna">Interno</option>
+					        <option value="publica">P&uacute;blico</option>
+					      </select>
+					    </div>';
+				}
+		?>
 
 		<div id="public-only">
 			<div class="form-group">
@@ -64,7 +73,8 @@ if(isset($insertCorrect)){
 			</div>
 
 			<div class="form-group">
-				<label for="total">Su total es de <input type="text" id="total">0</input> colones</label>
+				<label for="total">Su total es de </label>
+				<input type="text" id="totalMoney" name="totalMoney"></input>
 			</div>
 		</div>
 

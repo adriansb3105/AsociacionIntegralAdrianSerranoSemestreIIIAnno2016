@@ -179,7 +179,7 @@ END **
 DELIMITER **
 	CREATE PROCEDURE sp_activity_select_all()
 BEGIN
-	SELECT id, date_day, start_time, end_time, hours, kind, description FROM tb_activity;
+	SELECT * FROM tb_activity;
 END **
 
 DELIMITER **
@@ -234,7 +234,7 @@ CALL sp_employee_insert('0122223333', 'Marta', 'Sanchez', 'martita@hotmail.com',
 /************************************************************************************/
 
 
-SELECT * FROM tb_activity;
+SELECT * FROM tb_services;
 
 update tb_activity set date_day = '2017-01-30' where id='5q99n';
 

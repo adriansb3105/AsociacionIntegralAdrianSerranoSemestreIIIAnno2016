@@ -6,8 +6,14 @@
         echo $events_array;
       }
     ?>];
-    console.log(events);
 </script>
+    <div class="links">
+      <ul>
+        <li>
+          <a class="link" href="?new_event">Crear nuevo evento</a>
+        </li>
+      </ul>
+    </div>
 
     <div id="mini-clndr" class=""></div>
       <script id="calendar-template" type="text/template">
@@ -26,7 +32,7 @@
       </script>
 
 
-
+      <script src="view/js/sweetalert.min.js"></script>
       <script src="view/js/moment.js"></script>
       <script src="view/js/underscore.js"></script>
       <script src="view/js/clndr.js"></script>
