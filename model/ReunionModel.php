@@ -20,7 +20,7 @@ class ReunionModel{
   }
 
   public function uploadFile($urlFile){
-    $fileUploaded = \Cloudinary\Uploader::upload('model/tmp/t1.txt');
+    $fileUploaded = \Cloudinary\Uploader::upload($urlFile);
     return $fileUploaded;
   }
 

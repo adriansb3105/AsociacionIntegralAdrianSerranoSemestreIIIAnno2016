@@ -17,10 +17,11 @@ include_once 'model/ReunionModel.php';
           $description = $_POST['description'];
           $doc = basename($_FILES["doc"]["name"]);
           $doc = strtolower($_FILES['doc']['name']);
-          move_uploaded_file($_FILES['doc']['tmp_name'], 'model/tmp/'.$doc);
+          move_uploaded_file($_FILES['doc']['tmp_name'], 'tmp/'.$doc);
 
-          $fileArray = $this->model->uploadFile($doc);
-          $url = $fileArray['secure_url'];
+          $url = 'tmp/'.$doc;
+          //$fileArray = $this->model->uploadFile($doc);
+          //$url = $fileArray['secure_url'];
 
           $query = $this->model->insertReunion($datepicker, $url, $name, $description);
         }
