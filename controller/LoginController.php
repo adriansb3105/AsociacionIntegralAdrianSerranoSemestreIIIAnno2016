@@ -17,9 +17,9 @@ session_start();
         if(isset($_POST['emailLogin']) && isset($_POST['passwordLogin'])){
           $email = $_POST['emailLogin'];
           $password = $_POST['passwordLogin'];
-
+        
           //id, first_name, last_name, position
-          $employee = $this->model->findEmployee($email, $password);
+          $employee = $this->model->findEmployee($email, md5($password));
 
           if(count($employee) !== 0){
             $position = '';

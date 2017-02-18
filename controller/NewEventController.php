@@ -44,23 +44,20 @@ include_once 'model/NewEventModel.php';
                 $tablecloths_num = $_POST['tablecloths'];
                 $total = $_POST['totalMoney'];
                 $id = $this->model->insertPublic($newDate, $start_hour, $end_hour, $description, $kitchen, $chairs_num, $tables_num, $tablecloths_num, $total);
+                $this->model->insertIncome($newDate, 1, $id, $total);
               }
             }
 
             if($id !== ''){
               $insertCorrect = 'insertCorrect';
-              
+
               $message = "mensaje aqui";
               $title = "Evento Creado";
               $headers = "MIME-Version: 1.0\r\n";
               $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
               $headers .= "From: Guadalupe Community\r\n";
               $bool = mail($email, $title, $message, $headers);
-              if($bool){
-                  echo "Mensaje enviado";
-              }else{
-                  echo "Mensaje no enviado";
-              }
+
             }
           }
 

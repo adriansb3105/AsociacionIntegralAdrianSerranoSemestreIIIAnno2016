@@ -40,4 +40,8 @@ class NewEventModel{
       return '';
     }
   }
+
+  public function insertIncome($newDate, $id_concept, $id, $total){
+    mysqli_query($this -> conn, "call sp_petty_cash_income('$newDate','$id_concept','$id','$total')");
+  }
 }

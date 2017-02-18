@@ -45,8 +45,8 @@ if(isset($insertCorrect)){
 				echo '<div class="form-group">
 					      <label for="kind">Indique el tipo de evento a realizar</label>
 					      <select class="form-control" id="kind" name="kind">
-					        <option value="interna">Interno</option>
 					        <option value="publica">P&uacute;blico</option>
+					        <option value="interna">Interno</option>
 					      </select>
 					    </div>';
 				}

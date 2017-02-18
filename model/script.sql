@@ -53,7 +53,7 @@ CREATE TABLE tb_reunion(	reunion_date Date not null,
 							description varchar(100) not null,
 							PRIMARY KEY(reunion_date, doc_url));
 
-CREATE TABLE tb_petty_cash(	id int not null AUTO_INCREMENT primary key,
+CREATE TABLE tb_petty_cash(	id int AUTO_INCREMENT not null primary key,
 							date_day Date not null,
                             id_concept int not null,
                             id_activity varchar(5) not null,
@@ -162,7 +162,7 @@ DELIMITER **
 	CREATE PROCEDURE sp_petty_cash_income(date_day_ Date, id_concept_ int, id_activity_ varchar(5), income_ float)
 BEGIN
 	SELECT @num_rows:= count(total) FROM tb_petty_cash;
-    SELECT @prev_total:= total FROM tb_petty_cash WHERE id = @num_rows;
+    SELECT @prev_total:= total FROM tb_petty_cash WHERE id = @num_rows+10;
     INSERT INTO tb_petty_cash(date_day, id_concept, id_activity, income, outcome, total)
     VALUES(date_day_, id_concept_, id_activity_, income_, 0, @prev_total + income_);
 END **
@@ -174,6 +174,12 @@ BEGIN
     SELECT @prev_total:= total FROM tb_petty_cash WHERE id = @num_rows;
     INSERT INTO tb_petty_cash(date_day, id_concept, id_activity, income, outcome, total)
     VALUES(date_day_, id_concept_, id_activity_, 0, outcome_, @prev_total - outcome_);
+END **
+
+DELIMITER **
+	CREATE PROCEDURE sp_petty_cash_select_all()
+BEGIN
+	SELECT * FROM tb_petty_cash;
 END **
 
 DELIMITER **
@@ -217,8 +223,7 @@ CALL sp_internal_activity_insert('sdf44', '2017-02-27', '08:43:32', '09:25:00', 
 CALL sp_public_activity_insert('5sdf1', '2017-02-17', '10:00:00', '12:00:00', 'descript', true, 200, 50, 45, 5608)
 CALL sp_petty_cash_income('2017-02-13', 6, 'hf53r', 2000);
 CALL sp_petty_cash_outcome('2017-02-13', 7, '', 4000);
-call sp_find_employee('martita@hotmail.com', '123v23gjy23yjg23');
-
+call sp_petty_cash_select_all();
 call sp_activity_select_all()
 /****************************** OBLIGATORIES SCRIPTS**********************************/
 CALL sp_concept(1, 'Alquiler del Salon Comunal');
@@ -229,17 +234,15 @@ CALL sp_concept(5, 'Reparacion');
 CALL sp_concept(6, 'Otra entrada');
 CALL sp_concept(7, 'Otra Salida');
 CALL sp_petty_cash('2017-02-12', 6, '', 0, 0, 10000000);
-
-CALL sp_employee_insert('0122223333', 'Marta', 'Sanchez', 'martita@hotmail.com', 250000, '123v23gjy23yjg23', 'Secretaria');
+CALL sp_employee_insert('0122223333', 'Marta', 'Sanchez', 'martita@hotmail.com', 250000, 'a763a66f984948ca463b081bf0f0e6d0', 'Secretaria');
 /************************************************************************************/
 
 
-SELECT * FROM tb_services;
+SELECT * FROM tb_petty_cash;
 
-update tb_activity set date_day = '2017-01-30' where id='5q99n';
+update tb_employee set pass = 'a763a66f984948ca463b081bf0f0e6d0' where id='0122223333';
 
 delete from tb_activity where id!='1';
+drop procedure sp_petty_cash;
 
-drop procedure sp_public_activity_select_all;
-
-drop table tb_activity;
+drop table tb_petty_cash;
