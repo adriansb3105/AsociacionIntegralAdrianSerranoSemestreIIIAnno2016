@@ -117,7 +117,8 @@ END **
 
 
 DELIMITER **
-CREATE PROCEDURE sp_internal_activity_insert(id_ varchar(5),date_day_ Date, start_time_ Time, end_time_ Time, description_ varchar(500))
+CREATE PROCEDURE sp_internal_activity_insert(id_ varchar(5),date_day_ Date, start_time_ Time, end_time_ Time, 
+											description_ varchar(500))
 BEGIN
 	DECLARE hours_ TIME;
 	SET hours_ = end_time_ - start_time_;
@@ -175,6 +176,11 @@ BEGIN
     VALUES(date_day_, id_concept_, id_activity_, 0, outcome_, @prev_total - outcome_);
 END **
 
+DELIMITER **
+	CREATE PROCEDURE sp_activity_select_all()
+BEGIN
+	SELECT id, date_day, start_time, end_time, hours, kind, description FROM tb_activity;
+END **
 
 DELIMITER **
 	CREATE PROCEDURE sp_public_activity_select_all()
@@ -213,7 +219,7 @@ CALL sp_petty_cash_income('2017-02-13', 6, 'hf53r', 2000);
 CALL sp_petty_cash_outcome('2017-02-13', 7, '', 4000);
 call sp_find_employee('martita@hotmail.com', '123v23gjy23yjg23');
 
-call sp_internal_activity_select_all()
+call sp_activity_select_all()
 /****************************** OBLIGATORIES SCRIPTS**********************************/
 CALL sp_concept(1, 'Alquiler del Salon Comunal');
 CALL sp_concept(2, 'Alquiler del Local Comercial');
@@ -230,7 +236,7 @@ CALL sp_employee_insert('0122223333', 'Marta', 'Sanchez', 'martita@hotmail.com',
 
 SELECT * FROM tb_activity;
 
-update tb_activity set kind = 'interna' where id='a1b2c'
+update tb_activity set date_day = '2017-01-30' where id='5q99n';
 
 delete from tb_activity where id!='1';
 
