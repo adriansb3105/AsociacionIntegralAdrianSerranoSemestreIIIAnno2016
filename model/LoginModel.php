@@ -14,4 +14,10 @@ class LoginModel{
       $data = mysqli_fetch_all($query);
       return $data;
   }
+
+  public function findPartner($email, $password){
+      $query = mysqli_query($this -> conn, "call sp_find_partner('$email', '$password')");
+      $data = mysqli_fetch_all($query);
+      return $data;
+  }
 }

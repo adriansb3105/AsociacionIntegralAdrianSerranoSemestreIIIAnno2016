@@ -25,6 +25,10 @@
 
               <li>
                 <a class="link" href="?income">Nueva entrada o salida de dinero</a>
+              </li>
+
+              <li>
+                <a class="link" href="?insert">Insertar un nuevo asociado</a>
               </li>';
   }
  ?>

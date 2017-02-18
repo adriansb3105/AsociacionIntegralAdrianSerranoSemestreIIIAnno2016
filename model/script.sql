@@ -210,6 +210,13 @@ END **
 DELIMITER **
 	CREATE PROCEDURE sp_find_partner(email_ varchar(50), pass_ varchar(50))
 BEGIN
+	SELECT id, first_name, last_name, phone, address from tb_partner WHERE email_ = email and pass_ = pass;
+END **
+
+
+DELIMITER **
+	CREATE PROCEDURE sp_find_partner(email_ varchar(50), pass_ varchar(50))
+BEGIN
 	SELECT id, first_name, last_name, phone, address from tb_employee WHERE email_ = email and pass_ = pass;
 END **
 
@@ -237,10 +244,8 @@ CALL sp_petty_cash('2017-02-12', 6, '', 0, 0, 10000000);
 CALL sp_employee_insert('0122223333', 'Marta', 'Sanchez', 'martita@hotmail.com', 250000, 'a763a66f984948ca463b081bf0f0e6d0', 'Secretaria');
 /************************************************************************************/
 
-
-SELECT * FROM tb_petty_cash;
-
-update tb_employee set pass = 'a763a66f984948ca463b081bf0f0e6d0' where id='0122223333';
+select * from tb_partner;
+update tb_partner set pass = 'a94652aa97c7211ba8954dd15a3cf838' where id='2225556663';
 
 delete from tb_activity where id!='1';
 drop procedure sp_petty_cash;

@@ -8,6 +8,7 @@ include_once 'controller/ReunionController.php';
 include_once 'controller/NewEventController.php';
 include_once 'controller/IncomeController.php';
 include_once 'controller/SeeController.php';
+include_once 'controller/InsertController.php';
 
 if(isset($_GET['calendar'])){
   $controller = new CalendarController();
@@ -29,6 +30,9 @@ if(isset($_GET['calendar'])){
   $controller->invoke();
 }elseif(isset($_GET['see'])){
   $controller = new SeeController();
+  $controller->invoke();
+}elseif(isset($_GET['insert'])){
+  $controller = new InsertController();
   $controller->invoke();
 }else{
   $controller = new DefaultController();
